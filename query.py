@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import errorcode
 
-cnx = mysql.connector.connect(user='root', database='carti')
+cnx = mysql.connector.connect(user='USERNAME', database='NAME')
 cursor = cnx.cursor()
 
 query = ("SELECT brand, post, price FROM posts ")
