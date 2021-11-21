@@ -27,11 +27,11 @@ for products in items:
     pipe = mysql.connector.connect(user='USER', database='NAME')
     cursor = pipe.cursor()
 
-    add_employee = ("INSERT INTO posts "
+    add_products = ("INSERT INTO posts "
                     "(price, post, brand, shop, image, timestamp) "
                     "VALUES (%s, %s, %s, %s, %s, %s)")
-    data_employee = (price, product, brand, store, remote, now)
-    cursor.execute(add_employee, data_employee)
+    data_products = (price, product, brand, store, remote, now)
+    cursor.execute(add_products, data_products)
 
     pipe.commit()
 
