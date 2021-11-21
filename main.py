@@ -6,7 +6,7 @@ import mysql.connector
 
 
 # REQUEST HTML THROUGH REQUEST.GET
-pages = requests.get('https://www.game.co.za/game-za/en/All-Game-Categories/c/G000?q=%3Arelevance&page=4').text
+pages = requests.get('https://www.game.co.za/game-za/en/All-Game-Categories/Groceries-%26-Household/Baby/c/G0066?q=%3Arelevance&page=17').text
 shop = BeautifulSoup(pages, 'lxml')
 items = shop.find_all('div', class_='product-item productListerGridDiv')
 # LOOP FOUND PRODUCTS
@@ -24,7 +24,7 @@ for products in items:
 
     # Submit Data TO MYSQL DATABASE
     now = time.time()
-    pipe = mysql.connector.connect(user='root', database='carti')
+    pipe = mysql.connector.connect(user='USER', database='NAME')
     cursor = pipe.cursor()
 
     add_employee = ("INSERT INTO posts "
